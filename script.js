@@ -1,31 +1,69 @@
-    let images = ['1.svg', '2.svg', '3.svg', '4.svg', '5.svg'];
-    let targetOrder = [...images];
-    let clickedOrder = [];
-    let gameStarted = false;
+let images = ['1.svg', '2.svg', '3.svg', '4.svg', '5.svg'];
+let targetOrder = [...images];
+let clickedOrder = [];
+let gameStarted = false;
+var shuffledOrder = [1,2,3,4,5]
 
-    function startGame() {
-      if (!gameStarted) {
-        gameStarted = true;
-        clickedOrder = [];
-        shuffleImages();
-        renderImages();
-        enableImageClick();
-        enableRestartButton();
-      }
+function startGame() 
+{
+    shuffledOrder = shuffleOrder();
+    displayCards(shuffledOrder);
+      
+}
+initialDisplayCards(shuffledOrder)
+    function initialDisplayCards(){
+        gameSection.innerHTML = "";
+
+        for (let i = 0; i < 5; i++) {
+            let divCard = document.createElement("div");
+            divCard.classList.add("card");
+            divCard.style.backgroundImage = `url('letters/${shuffledOrder[i]}.svg')`; 
+            divCard.alt = `Card ${i}`;
+            divCard.setAttribute("index",i);
+            gameSection.appendChild(divCard);
+        }
     }
 
-    function shuffleImages() {
-      for (let i = images.length - 1; i > 0; i--) {
+function shuffleOrder() {
+    let cardOrder = [1, 2, 3, 4, 5];
+    for (let i = cardOrder.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [images[i], images[j]] = [images[j], images[i]];
-      }
+        [cardOrder[i], cardOrder[j]] = [cardOrder[j], cardOrder[i]];
+    }
+    return cardOrder; 
+}
+function displayCards(order) {
+        gameSection.innerHTML = "";
+
+        for (let i = 0; i < 5; i++) {
+            let divCard = document.createElement("div");
+            divCard.classList.add("card");
+            divCard.style.backgroundImage = `url('letters/${shuffledOrder[i]}.svg')`; 
+            divCard.alt = `Card ${i}`;
+            divCard.setAttribute("index",i);
+            gameSection.appendChild(divCard);
+        }
+    setTimeout(() => {
+            gameSection.innerHTML = "";
+
+            for (let i = 0; i < 5; i++) {
+                let divCard = document.createElement("div");
+                divCard.classList.add("card");
+                divCard.style.backgroundColor = "orange";
+                divCard.alt = `Card ${i}`;
+                divCard.addEventListener('click', gameController);
+                divCard.setAttribute("index", i);
+                gameSection.appendChild(divCard);
+            }
+        }, 2000);
+
     }
 
-    function renderImages() {
-      const imageContainer = document.getElementById('image-container');
-      imageContainer.innerHTML = '';
+function renderImages() {
+    const imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = '';
 
-      for (let i = 0; i < images.length; i++) {
+    for (let i = 0; i < images.length; i++) {
         const image = document.createElement('img');
         image.className = 'image';
         image.src = `images/${images[i]}`;
