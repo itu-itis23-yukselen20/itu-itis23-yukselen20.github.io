@@ -49,6 +49,8 @@ body {
 .profile-image {
     max-width: 100%;
     border-radius: 50%;
+    width: 200px;
+    length: 200px;
 }
 
 .image-container {
