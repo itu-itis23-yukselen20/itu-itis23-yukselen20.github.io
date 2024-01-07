@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Game</title>
-  <link rel="stylesheet" href="styles.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="navbar-div">
+    <div class="navbar-div">
         <nav class="navbar">
             <a href="index.html"> <p>About Me</p></a>
             <a href="game.html"> <p>Memory Game</p></a>
         </nav>
-
     </div>
-  <div id="image-container" class="image-container"></div>
-  <button id="start-btn" onclick="startGame()">Start</button>
-  <button id="restart-btn" onclick="resetGame()" disabled>Restart</button>
-  
-  <script src="script.js"></script>
+
+    <div class="main-container">
+        <div id="image-container" class="image-container"></div>
+        <button id="start-btn" onclick="startGame()">Start</button>
+        <button id="restart-btn" onclick="resetGame()" disabled>Restart</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
