@@ -47,10 +47,9 @@ body {
 }
 
 .profile-image {
-    max-width: 100%;
-    border-radius: 50%;
-    width: 200px;
-    length: 200px;
+    max-width: 40%;
+    border-radius: 40%;
+    
 }
 
 .image-container {
