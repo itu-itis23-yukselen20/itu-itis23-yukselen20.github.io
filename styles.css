@@ -60,7 +60,7 @@ body {
 }
 
 .card {
-    width: 100%;
+    width: 100px;
     height: 100px;
     background-color: #fff;
     border-radius: 8px;
