@@ -1,74 +1,78 @@
-body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: rgb(0, 255, 89);
-    }
-  
-    button {
-      font-size: 16px;
-      margin-top: 10px;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-  
-    .image-container {
-      display: flex;
-      flex-wrap: wrap;
-      background-color: rgb(255, 255, 255);
-    }
-  
-    .image {
-      width: 100px;
-      height: 100px;
-      margin: 5px;
-      cursor: pointer;
-    header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-}
-
-nav ul {
-    list-style: none;
+body, h1, p {
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
-nav a {
+.navbar-div {
+    background-color: #4CAF50;
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar a {
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+    color: white;
 }
 
-main {
+.main-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
     padding: 20px;
-}
-
-.about-section {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile-container {
+.profile-container,
+.game-container {
     text-align: center;
 }
 
+/* About Me page specific styles */
+.about-section {
+    margin-bottom: 40px;
+}
+
 .profile-image {
-    width: 200px;
-    height: 200px;
+    max-width: 100%;
     border-radius: 50%;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#start-btn,
+#restart-btn {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
 }
